@@ -1,0 +1,466 @@
+/* ==========================================================
+   1. VARIABEL & RESET
+   ========================================================== */
+:root {
+    --black: #0a0a12;
+    --navy-dark: #0f1a3d;
+    --navy: #1b2a6b;
+    --purple: #7c3aed;
+    --purple-light: #a78bfa;
+    --white: #ffffff;
+    --gray-light: #e5e7f0;
+
+    --radius: 14px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --transition: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--gray-light);
+    background-color: var(--black);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ==========================================================
+   2. LAYOUT UMUM
+   ========================================================== */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.section {
+    padding: 4.5rem 0;
+    background-color: var(--black);
+}
+
+.section-alt {
+    background-color: var(--navy-dark);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--purple), var(--purple-light));
+}
+
+/* ==========================================================
+   3. HEADER & NAVIGASI
+   ========================================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(10, 10, 18, 0.92);
+    border-bottom: 1px solid var(--navy);
+    backdrop-filter: blur(8px);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-list a {
+    font-weight: 500;
+    color: var(--gray-light);
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    color: var(--purple-light);
+    border-color: var(--purple);
+}
+
+/* ==========================================================
+   4. HERO
+   ========================================================== */
+.hero {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--purple) 130%);
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-greeting {
+    color: var(--purple-light);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--white);
+    margin: 0.5rem 0;
+}
+
+.hero-role {
+    font-size: 1.1rem;
+    color: var(--purple-light);
+    margin-bottom: 1rem;
+}
+
+.hero-desc {
+    max-width: 520px;
+    margin-bottom: 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-avatar {
+    text-align: center;
+}
+
+.avatar-circle {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--purple), var(--navy));
+    border: 5px solid var(--white);
+    box-shadow: var(--shadow);
+}
+
+.hero-avatar figcaption {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--gray-light);
+}
+
+/* ==========================================================
+   5. TOMBOL
+   ========================================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    font-weight: 600;
+    border: 2px solid var(--purple);
+    transition: transform var(--transition), background-color var(--transition), color var(--transition);
+}
+
+.btn:hover,
+.btn:focus {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--purple-light);
+    border-color: var(--purple-light);
+    color: var(--black);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-outline:hover,
+.btn-outline:focus {
+    background-color: var(--white);
+    color: var(--navy-dark);
+}
+
+/* ==========================================================
+   6. KARTU (CARD)
+   ========================================================== */
+.card {
+    background-color: var(--navy-dark);
+    border: 1px solid var(--navy);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+}
+
+/* ==========================================================
+   7. TENTANG
+   ========================================================== */
+.about-card p {
+    margin-bottom: 1.5rem;
+}
+
+.about-card strong {
+    color: var(--purple-light);
+}
+
+.info-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+}
+
+.info-list dt {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--purple-light);
+}
+
+.info-list dd {
+    color: var(--white);
+    font-weight: 500;
+}
+
+/* ==========================================================
+   8. KEAHLIAN
+   ========================================================== */
+/* ==========================================================
+   8. KEAHLIAN
+   ========================================================== */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.skill-item {
+    padding: 1.5rem;
+    background-color: var(--black);
+    border: 1px solid var(--purple);
+    border-radius: var(--radius);
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.skill-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--purple-light);
+}
+
+.skill-item h3 {
+    font-size: 1.15rem;
+    color: var(--purple-light);
+    margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+    font-size: 0.95rem;
+    color: var(--gray-light);
+}
+
+/* ==========================================================
+   9. PROYEK
+   ========================================================== */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.project-card {
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--purple);
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 999px;
+    color: var(--white);
+    background-color: var(--purple);
+}
+
+.project-card h3 {
+    color: var(--white);
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    margin-bottom: 1.25rem;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-list li {
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--purple-light);
+    border: 1px solid var(--navy);
+    border-radius: 6px;
+    background-color: var(--black);
+}
+
+/* ==========================================================
+   10. FOOTER
+   ========================================================== */
+.site-footer {
+    padding: 1.75rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gray-light);
+    background-color: var(--black);
+    border-top: 1px solid var(--navy);
+}
+
+/* ==========================================================
+   11. RESPONSIVE – TABLET (maks. 900px)
+   ========================================================== */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .avatar-circle {
+        width: 180px;
+        height: 180px;
+        font-size: 3.5rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   12. RESPONSIVE – MOBILE (maks. 640px)
+   ========================================================== */
+@media (max-width: 640px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem 1.25rem;
+    }
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .info-list {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
